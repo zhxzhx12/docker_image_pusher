@@ -60,7 +60,12 @@ jobs:
         echo $ALIYUN_REGISTRY_USER
         echo $ALIYUN_REGISTRY_PASSWORD
         echo $ALIYUN_REGISTRY
-        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
+        
+        #docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
+
+        docker login -u zhx_zhx12@163.com -p Accenture1 crpi-jg3jy5vj7mft541e.cn-hongkong.personal.cr.aliyuncs.com
+      
+        
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
         declare -A temp_map
