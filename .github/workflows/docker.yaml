@@ -19,10 +19,13 @@ jobs:
   build:
     name: Pull
     runs-on: ubuntu-latest
+    environment: 
+      name: ALIYUN_NAME_SPACE
     steps:
     - name: Before freeing up disk space
       run: |
         echo "Before freeing up disk space"
+        echo "${{ secrets.ALIYUN_REGISTRY_USER }}"
         echo "=============================================================================="
         df -hT
         echo "=============================================================================="
