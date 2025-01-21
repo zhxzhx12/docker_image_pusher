@@ -7,15 +7,12 @@ on:
 
 
 env:
-  # ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
-  # ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
-  # ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
-  # ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
+  ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
+  ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
+  ALIYUN_REGISTRY_USER: "${{ secrets.ALIYUN_REGISTRY_USER }}"
+  ALIYUN_REGISTRY_PASSWORD: "${{ secrets.ALIYUN_REGISTRY_PASSWORD }}"
 
-  ALIYUN_REGISTRY: "crpi-jg3jy5vj7mft541e.cn-hongkong.personal.cr.aliyuncs.com"
-  ALIYUN_NAME_SPACE: "namespace-hx"
-  ALIYUN_REGISTRY_USER: "zhx_zhx12@163.com"
-  ALIYUN_REGISTRY_PASSWORD: "Accenture1"
+
 
 jobs:
 
@@ -66,10 +63,9 @@ jobs:
         echo $ALIYUN_REGISTRY_PASSWORD
         echo $ALIYUN_REGISTRY
         
-        #docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
+        docker login -u $ALIYUN_REGISTRY_USER -p $ALIYUN_REGISTRY_PASSWORD $ALIYUN_REGISTRY
 
-        docker login -u zhx_zhx12@163.com -p Accenture1 crpi-jg3jy5vj7mft541e.cn-hongkong.personal.cr.aliyuncs.com
-      
+       
         
         # 数据预处理,判断镜像是否重名
         declare -A duplicate_images
